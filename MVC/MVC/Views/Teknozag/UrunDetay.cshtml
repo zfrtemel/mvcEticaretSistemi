@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "UrunDetay";
+    Layout = "~/Views/Shared/_TeknozagLayout.cshtml";
+}
+
+@model MVC.Models.Tbl_Urunler
+
+<section class="flat-product-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="flexslider">
+                    <ul class="slides">
+
+                        <li data-thumb="@Model.u_OneCikar">
+                            <a href='#' id="zoom" class='zoom'><img src="@Model.u_OneCikar" alt='' width='400' height='300' /></a>
+                            <span>NEW</span>
+                        </li>
+                    </ul><!-- /.slides -->
+                </div><!-- /.flexslider -->
+            </div><!-- /.col-md-6 -->
+            <div class="col-md-6">
+                <div class="product-detail">
+                    <div class="header-detail">
+                        <h4 class="name">@Model.u_Adi</h4>
+                        <div class="reviewed">
+                            <div class="review">
+                                <div class="queue">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </div>
+
+                            </div><!-- /.review -->
+
+                        </div><!-- /.reviewed -->
+                    </div><!-- /.header-detail -->
+                    <div class="content-detail">
+                        <div class="price">
+                            <div class="regular">
+                                $@Model.u_indirim_Fiyat
+                            </div>
+                            <div class="sale">
+                                $ @Model.u_Fiyat
+                            </div>
+                        </div>
+
+                        <div class="product-id">
+                            SKU: <span class="id">@Model.u_ID</span>
+                        </div>
+                    </div><!-- /.content-detail -->
+                    <div class="footer-detail">
+                        <div class="quanlity-box">
+                            <div class="colors">
+
+                                <select name="color">
+                                    <option value="">@Model.Tbl_Renkler.Renk_Adi</option>
+
+                                </select>
+                            </div>
+                            <div class="quanlity">
+                                <span class="btn-down"></span>
+                                <input type="number" name="number" value="" min="1" max="100" placeholder="Quanlity">
+                                <span class="btn-up"></span>
+                            </div>
+                        </div><!-- /.quanlity-box -->
+                        <form action="/Teknozag/SepetEkle" method="get" enctype="multipart/form-data">
+                        
+                            <div class="box-cart style2">
+                                <div class="btn-add-cart">
+                                    <button class="btn btn-danger" type="submit" href="@Model.u_ID" title=""><img src="~/Content/Teknozag/images/icons/add-cart.png" alt="">Sepete Ekle </button>
+
+                                </div>
+                            </div><!-- /.box-cart -->
+                        </form>
+                        <div class="social-single">
+                            <span>SHARE</span>
+                            <ul class="social-list style2">
+                                <li>
+                                    <a href="#" title="">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="">
+                                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="">
+                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="">
+                                        <i class="fa fa-google" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul><!-- /.social-list -->
+                        </div><!-- /.social-single -->
+                    </div><!-- /.footer-detail -->
+                </div><!-- /.product-detail -->
+            </div><!-- /.col-md-6 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.flat-product-detail -->
+
+<section class="flat-product-content">
+    <ul class="product-detail-bar">
+        <li class="active">Description</li>
+
+    </ul><!-- /.product-detail-bar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="description-text">
+                    <div class="box-text">
+                        <h4>@Model.u_Adi</h4>
+                        <p>@Model.u_Aciklama</p>
+                    </div>
+                </div><!-- /.description-text -->
+            </div><!-- /.col-md-6 -->
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="rating">
+                    <ul class="queue-box">
+                    </ul><!-- /.queue-box -->
+                </div><!-- /.rating -->
+            </div><!-- /.col-md-6 -->
+            <div class="col-md-6">
+
+            </div><!-- /.col-md-6 -->
+
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.flat-product-content -->

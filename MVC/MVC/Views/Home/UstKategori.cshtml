@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "UstKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}  
+    <form action="/Home/AltKategori" method="post">
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Kategori Ekle</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Kategori Adı Giriniz</label>
+                            <input type="text" class="form-control" name="Kategori_Adi">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mr-1" value="ekle" type="submit">Kaydet</button>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Ana Kategoriler</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Kategori ADI</th>
+                                    <th scope="col">Sil</th>
+                                </tr>
+                            </thead>
+                            @foreach (var itemKategori in Model)
+                            {
+                                <tbody>
+                                    <tr>
+                                       
+                                        <td>@itemKategori.Kategori_ID</td>
+                                        <td>@itemKategori.Kategori_Adi</td>
+                                        <td> <a href="/Home/UstKategoriSil/@itemKategori.Kategori_ID" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a></td>
+
+                                    </tr>
+                                </tbody>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>

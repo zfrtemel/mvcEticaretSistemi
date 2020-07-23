@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <a href="UrunEkle" class="btn btn-success">Ürün Ekle</a>
+    </div>
+    <div class="card-body">
+        <div class="section-title">Ürün Listesi</div>
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Ürün ID</th>
+                    <th scope="col">Ürün Adı</th>
+                    <th scope="col">Ana Kategori</th>
+                    <th scope="col">Alt Kategori</th>
+                    <th scope="col">Fiyat</th>
+                    <th scope="col">Renk</th>
+                    <th scope="col">stok</th>
+                    <th scope="col">indirimli fiyatı</th>
+                    <th scope="col">eklenme tarihi</th>
+                    <th scope="col">satılan miktar</th>
+                    <th scope="col">Güncelle</th>
+                    <th scope="col">Sil</th>
+                </tr>
+            </thead>
+            @foreach (var itemurun in Model)
+            {
+                <tbody>
+                    <tr>
+
+                        <td>@itemurun.u_ID</td>
+                        <td>@itemurun.u_Adi</td>
+                        <td>@itemurun.Tbl_Kategori.Kategori_Adi</td>
+                        <td>@itemurun.Tbl_AltKategori.AltKategori_Adi</td>
+                        <td>@itemurun.u_Fiyat</td>
+                        <td>@itemurun.Tbl_Renkler.Renk_Adi</td>
+                        <td>@itemurun.u_Stok</td>
+                        <td>@itemurun.u_indirim_Fiyat</td>
+                        <td>@itemurun.u_DT</td>
+                        <td>@itemurun.u_SatılanMiktar</td>
+                        <td><a href="/home/UrunGuncelle/@itemurun.u_ID" class="btn btn-icon btn-primary"><i class="far fa-edit"></i></a></td>
+                        <td> <a href="/Home/UrunSil/@itemurun.u_ID" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a></td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+
+    </div>
+</div>
+
+
+

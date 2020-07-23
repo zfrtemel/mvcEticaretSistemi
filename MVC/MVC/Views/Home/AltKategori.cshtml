@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "AltKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form action="/Home/AltKategori" method="post">
+    <div class="row">
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Alt Kategori Ekle</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Kategori Adı Giriniz</label>
+                        <input type="text" class="form-control" name="AltKategori_Adi">
+                    </div>
+                    <div class="form-group">
+                        <label>Üst Kategori Seçiniz</label>
+                        <select class="form-control" name="UstKategori_ID">
+                            @foreach (var kategori in ViewBag.bagliKategori)
+                            {
+                                <option value="@kategori.Kategori_ID">@kategori.Kategori_Adi</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-primary mr-1" value="ekle" type="submit">Kaydet</button>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Ana Kategoriler</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Alt Kategori Adı</th>
+                                <th scope="col">Bağlı Olduğu Kategori</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        @foreach (var itemKategori in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    
+                                   
+                                    <td>@itemKategori.aKategori_ID</td>
+                                    <td>@itemKategori.AltKategori_Adi</td>
+                                    <td>@itemKategori.Tbl_Kategori.Kategori_Adi</td>
+                                    <td> <a href="/Home/AltKategoriSil/@itemKategori.aKategori_ID" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a></td>
+
+                                </tr>
+                            </tbody>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

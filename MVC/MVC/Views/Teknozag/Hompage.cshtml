@@ -1,0 +1,392 @@
+﻿
+@{
+    ViewBag.Title = "Ana Sayfa";
+    Layout = "~/Views/Shared/_TeknozagLayout.cshtml";
+}
+
+<section class="flat-row flat-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="slider owl-carousel">
+                    @foreach (var item in ViewBag.Slider)
+                    {
+                        <div class="slider-item style2">
+                            <div class="item-text">
+                                <div class="header-item">
+                                    <p>@item.SliderKategori</p>
+                                    <h2 class="name">@item.SliderAdi </h2>
+                                    <p>
+                                        @item.SliderDetay
+                                    </p>
+                                </div>
+                                <div class="divider65"></div>
+                                <div class="content-item">
+                                    <div class="price">
+                                        <span class="sale">$@item.SliderFiyat</span>
+                                        <span class="btn-shop">
+                                            <a href="#" title="">Ürünleri Gör <img src="~/Content/Teknozag/images/icons/right-2.png" alt=""></a>
+                                        </span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="regular">
+                                        $@item.Slider_indirimFiyat
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-image">
+                                
+                                <img src="@item.SliderURL" width="457" height="430" alt="">
+                            </div>
+                            <div class="clearfix"></div>
+                        </div><!-- /.slider -->
+                    }
+                </div><!-- /.slider -->
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.slider -->
+
+<section class="flat-row flat-banner-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="banner-box one-half">
+                    <div class="inner-box">
+                        <a href="#" title="">
+                            <img src="~/Content/Teknozag/images/banner_boxes/ali1.png" alt="">
+                        </a>
+                    </div><!-- /.inner-box -->
+                    <div class="inner-box">
+                        <a href="#" title="">
+                            <img src="~/Content/Teknozag/images/banner_boxes/ali5.png" alt="">
+                        </a>
+                    </div><!-- /.inner-box -->
+                    <div class="clearfix"></div>
+                </div><!-- /.box -->
+                <div class="banner-box">
+                    <div class="inner-box">
+                        <a href="#" title="">
+                            <img src="~/Content/Teknozag/images/banner_boxes/ali4.png" alt="">
+                        </a>
+                    </div>
+                </div><!-- /.box -->
+            </div><!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <div class="banner-box">
+                    <div class="inner-box">
+                        <a href="#" title="">
+                            <img src="~/Content/Teknozag/images/banner_boxes/ali3.png" alt="">
+                        </a>
+                    </div><!-- /.inner-box -->
+                </div><!-- /.box -->
+            </div><!-- /.col-md-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.resimler -->
+
+<section class="flat-imagebox">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-tab">
+                    <ul class="tab-list">
+                        <li class="active">En Yeni Ürünler</li>
+                    </ul>
+                </div><!-- /.product-tab -->
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+        <div class="box-product">
+            <div class="row">
+                @foreach (var item in ViewBag.yeniUrun)
+                {
+                    <div class="col-lg-3 col-sm-6">
+
+                        <div class="product-box">
+                            <div class="imagebox">
+                                <span class="item-new">Yeni</span>
+                                <ul>
+                                    <li>
+                                        <a href="UrunDetay/@item.u_Adi" title="">
+                                            <img src="@item.u_OneCikar" width="122" height="250" alt="">
+                                        </a>
+                                    </li>
+
+                                </ul><!-- /.box-image -->
+                                <div class="box-content">
+                                    <div class="cat-name">
+                                        <a href="#" title="">@item.Tbl_Kategori.Kategori_Adi</a>
+                                    </div>
+                                    <div class="product-name">
+                                        <a href="UrunDetay/@item.u_Adi" title="">@item.u_Adi</a>
+                                    </div>
+                                    <div class="price">
+                                        <span class="sale">$@item.u_Fiyat</span>
+                                    </div>
+                                </div><!-- /.box-content -->
+                                <div class="box-bottom">
+                                    <div class="btn-add-cart">
+                                        <a href="#" title="">
+                                            <img src="~/Content/Teknozag/images/icons/add-cart.png" alt="">Sepete Ekle
+                                        </a>
+                                    </div>
+                                </div><!-- /.box-bottom -->
+                            </div><!-- /.imagebox -->
+                        </div>
+
+
+
+                    </div><!-- /.col-lg-3 col-sm-6 -->
+                }
+            </div>
+         
+            </div>
+    </div>
+</section><!-- /.yeni ürünler -->
+
+                    <section class="flat-imagebox style1">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="flat-row-title">
+                                        <h3>En Çok Satılan Ürünler</h3>
+                                    </div>
+                                </div><!-- /.col-md-12 -->
+                            </div><!-- /.row -->
+                            <div class="row ">
+                                <div class="col-md-12 owl-carousel-10">
+                                    @foreach (var item in ViewBag.SatilanUrun)
+                                    {
+                                        <div class="owl-carousel-item">
+                                            <div class="product-box style1">
+                                                <div class="imagebox style1">
+                                                    <div class="box-image">
+                                                        <a href="UrunDetay/@item.u_Adi" title="">
+                                                            <img src="@item.u_OneCikar" alt="">
+                                                        </a>
+                                                    </div><!-- /.box-image -->
+                                                    <div class="box-content">
+                                                        <div class="cat-name">
+                                                            <a href="#" title="">@item.Tbl_Kategori.Kategori_Adi</a>
+                                                        </div>
+                                                        <div class="product-name">
+                                                            <a href="UrunDetay/@item.u_Adi" title="">@item.u_Adi</a>
+                                                        </div>
+                                                        <div class="price">
+                                                          
+                                                            <span class="sale">$@item.u_Fiyat</span>
+                                                        </div>
+                                                    </div><!-- /.box-content -->
+                                                    <div class="box-bottom">
+                                                        <div class="compare-wishlist">
+                                                            <a href="#" class="compare" title="">
+                                                                <img src="~/Content/Teknozag/images/icons/compare.png" alt="">Compare
+                                                            </a>
+                                                            <a href="#" class="wishlist" title="">
+                                                                <img src="~/Content/Teknozag/images/icons/wishlist.png" alt="">Wishlist
+                                                            </a>
+                                                        </div>
+                                                        <div class="btn-add-cart">
+                                                            <a href="#" title="">
+                                                                Add to Cart
+                                                            </a>
+                                                        </div>
+                                                    </div><!-- /.box-bottom -->
+                                                </div><!-- /.imagebox style1 -->
+                                            </div><!-- /.product-box style1 -->
+                                        </div><!-- /.product-box style1 -->
+                                    }
+
+                                </div><!-- /.owl-carousel-item -->
+                                </div>
+                            </div><!-- /.row -->
+                        
+                    </section><!-- /.en çok satılan ürünler -->
+
+                
+
+                    <section class="flat-highlights">
+                        <div class="container">
+                            <div class="row">
+                               
+                                <div class="col-md-4">
+                                    <div class="flat-row-title">
+                                        <h3>Bilgisayar</h3>
+                                    </div>
+                                    <ul class="product-list style1">
+                                        @foreach (var item in ViewBag.Bilgisayar)
+                                        {
+
+                                            <li>
+                                                <div class="img-product">
+                                                    <a href="UrunDetay/@item.u_Adi" title="">
+                                                        <img src="@item.u_OneCikar" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="info-product">
+                                                    <div class="name">
+                                                        <a href="UrunDetay/@item.u_Adi" title="">@item.u_Adi</a>
+                                                    </div>
+                                                    <div class="queue">
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div class="price">
+                                                        <span class="sale">$@item.u_Fiyat</span>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </li>
+                                        }
+
+                                    </ul><!-- /.product-list style1 -->
+                                   
+                                    </div><!-- /.col-md-4 -->
+                             
+                              
+                                    <div class="col-md-4">
+                                        <div class="flat-row-title">
+                                            <h3>Telefon</h3>
+                                        </div>
+                                        <ul class="product-list style1">
+                                            @foreach (var item in ViewBag.Telefon)
+                                            {
+
+                                                <li>
+                                                    <div class="img-product">
+                                                        <a href="UrunDetay/@item.u_Adi" title="">
+                                                            <img src="@item.u_OneCikar" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="info-product">
+                                                        <div class="name">
+                                                            <a href="UrunDetay/@item.u_Adi" title="">@item.u_Adi</a>
+                                                        </div>
+                                                        <div class="queue">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="price">
+                                                            <span class="sale">$@item.u_Fiyat</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div><!-- /.col-md-4 -->
+
+                              
+                              
+                                    <div class="col-md-4">
+                                        <div class="flat-row-title">
+                                            <h3>Kulaklık</h3>
+                                        </div>
+
+                                        <ul class="product-list style1">
+                                            @foreach (var item in ViewBag.Tablet)
+                                            {
+                                                <li>
+                                                    <div class="img-product">
+                                                        <a href="UrunDetay/@item.u_Adi" title="">
+                                                            <img src="@item.u_OneCikar" height="250" width="96" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="info-product">
+                                                        <div class="name">
+                                                            <a href="UrunDetay/@item.u_Adi" title="">@item.u_Adi</a>
+                                                        </div>
+                                                        <div class="queue">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="price">
+                                                            <span class="sale">$@item.u_Fiyat</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                              
+                                <!-- /.col-md-4 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </section><!-- /.3lü alan -->
+
+                    <section class="flat-iconbox">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="iconbox">
+                                        <div class="box-header">
+                                            <div class="image">
+                                                <img src="~/Content/Teknozag/images/icons/car.png" alt="">
+                                            </div>
+                                            <div class="box-title">
+                                                <h3>Hızlı Kargo</h3>
+                                            </div>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-content">
+                                            <p>50 TL Ve üzeri alışverişlerinizde hızlı kargo servisimizden yararlanabilirsiniz.</p>
+                                        </div><!-- /.box-content -->
+                                    </div><!-- /.iconbox -->
+                                </div><!-- /.col-md-3 col-sm-6 -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="iconbox">
+                                        <div class="box-header">
+                                            <div class="image">
+                                                <img src="~/Content/Teknozag/images/icons/order.png" alt="">
+                                            </div>
+                                            <div class="box-title">
+                                                <h3>Hızlı Yanıt Servis</h3>
+                                            </div>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-content">
+                                            <p>Müşteri Hizmetlerimizin Hızı Ve İş Bitiriciliği Sayesinde Sizlere En Kısa Şekilde Yardımcı Olmaktayız</p>
+                                        </div><!-- /.box-content -->
+                                    </div><!-- /.iconbox -->
+                                </div><!-- /.col-md-3 col-sm-6 -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="iconbox">
+                                        <div class="box-header">
+                                            <div class="image">
+                                                <img src="~/Content/Teknozag/images/icons/payment.png" alt="">
+                                            </div>
+                                            <div class="box-title">
+                                                <h3>3D Secure</h3>
+                                            </div>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-content">
+                                            <p>Güvenli Ödeme Sistemimiz Sayesinde Sorunsuz Şekilde Alışverişlerinizi Gerçekleştirebilirsiniz</p>
+                                        </div><!-- /.box-content -->
+                                    </div><!-- /.iconbox -->
+                                </div><!-- /.col-md-3 col-sm-6 -->
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="iconbox">
+                                        <div class="box-header">
+                                            <div class="image">
+                                                <img src="~/Content/Teknozag/images/icons/return.png" alt="">
+                                            </div>
+                                            <div class="box-title">
+                                                <h3>Ürün İadesi</h3>
+                                            </div>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-content">
+                                            <p>Satın Aldığınız Ürünü İlk 30 Gün İçerisinde Bize Geri Göndermeniz Halinde Paranız İade</p>
+                                        </div><!-- /.box-content -->
+                                    </div><!-- /.iconbox -->
+                                </div><!-- /.col-md-3 col-sm-6 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </section><!-- /.flat-iconbox -->

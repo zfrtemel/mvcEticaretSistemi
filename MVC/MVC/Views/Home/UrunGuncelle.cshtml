@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "UrunGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MVC.Models.Tbl_Urunler
+
+<div class="row">
+    <div class="col-md-4">
+        <h2> Kayıt Güncelle</h2>
+        @using (Html.BeginForm("UrunGuncelle", "Home", FormMethod.Post))
+        {
+   
+
+            @Html.HiddenFor(k => k.u_ID)
+            @Html.LabelFor(k => k.u_Adi)<br />
+            @Html.TextBoxFor(k => k.u_Adi, new { @class = "form-control", @name = "u_Adi", @id = "u_Adi" })
+            @Html.ValidationMessageFor(k => k.u_Adi, null, new { @class = "text-danger" })<br />
+
+            <div class="form-group">
+                <label>Ürün Ana Kategori</label>
+                <select class="form-control" name="u_Kategori_ID">
+                    @foreach (var kategori in ViewBag.kategoriler)
+                    {
+                        <option value="@kategori.Kategori_ID">@kategori.Kategori_Adi</option>
+                    }
+
+
+                </select>
+            </div>
+            @*@Html.LabelFor(k => k.u_AltKategori_ID)<br />
+            @Html.TextBoxFor(k => k.u_AltKategori_ID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(k => k.u_AltKategori_ID, null, new { @class = "text-danger" })<br />*@
+            <div class="form-group">
+                <label>Ürün Alt Kategori</label>
+                <select class="form-control" name="u_AltKategori_ID">
+                    @foreach (var kategori in ViewBag.altKategoriler)
+                    {
+
+                        <option value="@kategori.aKategori_ID">@kategori.AltKategori_Adi</option>
+                    }
+                </select>
+            </div>
+
+
+
+
+            @*@Html.LabelFor(k => k.u_Renk_ID) < br />
+             @Html.DropDownListFor(k => k.u_Renk_ID, null, new { @class = "form-control" })
+            @Html.ValidationMessageFor(k => k.u_Renk_ID, null, new { @class = "text-danger" }) < br />*@
+
+            <div class="form-group">
+                <label>Ürün Ana Kategori</label>
+                <select class="form-control" name="u_Renk_ID">
+                    @foreach (var kategori in ViewBag.renkler)
+                    {
+                        <option value="@kategori.Renk_ID">@kategori.Renk_Adi</option>
+                    }
+                </select>
+            </div>
+            @Html.LabelFor(k => k.u_Fiyat)<br />
+            @Html.TextBoxFor(k => k.u_Fiyat, new { @class = "form-control" })
+            @Html.ValidationMessageFor(k => k.u_Fiyat, null, new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(k => k.u_Stok)<br />
+            @Html.TextBoxFor(k => k.u_Stok, new { @class = "form-control" })
+            @Html.ValidationMessageFor(k => k.u_Stok, null, new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(k => k.u_indirim_Fiyat)<br />
+            @Html.TextBoxFor(k => k.u_indirim_Fiyat, new { @class = "form-control" })
+            @Html.ValidationMessageFor(k => k.u_indirim_Fiyat, null, new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(k => k.u_DT)<br />
+            @Html.TextBoxFor(k => k.u_DT, new { @class = "form-control" })
+            @Html.ValidationMessageFor(k => k.u_DT, null, new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(k => k.u_Aciklama)<br />
+            @Html.TextBoxFor(k => k.u_Aciklama, new { @class = "form-control" })
+            @Html.ValidationMessageFor(k => k.u_Aciklama, null, new { @class = "text-danger" })<br />
+            <br />
+            <input type="submit" value="Kaydet" class="btn btn-success" />
+        }
+    </div>
+</div>
+

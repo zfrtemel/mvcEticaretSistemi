@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0aba8dc215aa4017b71d80d05309eeac" Name="Diagram1">
+        <EntityTypeShape EntityType="dbModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Adres" Width="1.5" PointX="10.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_AltKategori" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Kategori" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Kullanici" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Ozellik" Width="1.5" PointX="2.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Renkler" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Resim" Width="1.5" PointX="7.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Rol" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Siparis" Width="1.5" PointX="10.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_SiparisDurum" Width="1.5" PointX="12.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Urunler" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Yorumlar" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Adres_Tbl_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_AltKategori_Tbl_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Urunler_Tbl_AltKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Urunler_Tbl_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Kullanici_Tbl_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Siparis_Tbl_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Urunler_Tbl_Renkler" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Resim_Tbl_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Siparis_Tbl_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_SiparisDurum_Tbl_Siparis" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Tbl_Urunler_Tbl_Yorumlar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbModel.Tbl_Slider" Width="1.5" PointX="8.5" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

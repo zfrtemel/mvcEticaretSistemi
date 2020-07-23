@@ -1,0 +1,101 @@
+﻿
+
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form action="/Home/UrunEkle" method="post" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+            <h4>HTML5 Form Basic</h4>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>Ürün Adı</label>
+                <input type="text" class="form-control" name="u_Adi">
+            </div>
+            <div class="form-group">
+                <label>Ürün Ana Kategori</label>
+                <select class="form-control" name="u_Kategori_ID">
+                    @foreach (var kategori in ViewBag.kategoriler)
+                    {
+                        <option value="@kategori.Kategori_ID">@kategori.Kategori_Adi</option>
+                    }
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ürün Alt Kategori</label>
+                <select class="form-control" name="u_AltKategori_ID">
+                    @foreach (var kategori in ViewBag.altKategoriler)
+                    {
+                        <option value="@kategori.aKategori_ID">@kategori.AltKategori_Adi</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ürün Ana Kategori</label>
+                <select class="form-control" name="u_Renk_ID">
+                    @foreach (var kategori in ViewBag.renkler)
+                    {
+                        <option value="@kategori.Renk_ID">@kategori.Renk_Adi</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fiyatı</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            ₺
+                        </div>
+                    </div>
+                    <input type="text" class="form-control currency" name="u_Fiyat">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Stok Adeti</label>
+                <input type="text" class="form-control" name="u_Stok">
+            </div>
+            <div class="form-group">
+                <label>İndirimli Fiyatı</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            ₺
+                        </div>
+                    </div>
+                    <input type="text" class="form-control currency" name="u_indirim_Fiyat">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Eklenme Tarihi</label>
+                <input type="date" class="form-control" name="u_DT">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3">Ürün Resmi</label>
+                <div class="controls col-md-9">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <span class="btn btn-white btn-file">
+                            <span class="fileupload-new"><i class="icon-paper-clip"></i> Resim Seç</span>
+                            <input type="file" name="fileupload" class="default" />
+                        </span>
+                        <span class="fileupload-preview" style="margin-left:5px;"></span>
+                        <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label>Ürün Açıklaması</label>
+                <input type="text" class="form-control" name="u_Aciklama">
+            </div>
+
+        </div>
+        <div class="card-footer text-right">
+            <button class="btn btn-primary mr-1" value="ekle" type="submit">Kaydet</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Slider Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a href="SliderResimEkle" class="btn btn-success">Slider Ekle</a>
+    </div>
+    <div class="card-body">
+        <div class="section-title">Slider Listesi</div>
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Slider ID</th>
+                    <th scope="col">Slider Adı</th>
+
+                </tr>
+            </thead>
+            @foreach (var itemurun in ViewBag.sliders)
+            {
+                <tbody>
+                    <tr>
+                        <td>@itemurun.s_ID</td>
+                        <td>@itemurun.SliderAdi</td>
+                        <td> <a href="/Home/SliderSil/@itemurun.s_ID" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a></td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Giris";
+    Layout = "~/Views/Shared/_TeknozagLayout.cshtml";
+}
+    <section class="flat-account background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-login">
+                        <div class="title">
+                            <h3>Login</h3>
+                        </div>
+                        <form action="Giris" method="post" id="form-login" accept-charset="utf-8">
+                            <div class="form-box">
+                                <label for="name-login">Kullanıcı Adınız </label>
+                                <input type="text" id="Username" name="Username" placeholder="Kullanıcı Adınız">
+                            </div><!-- /.form-box -->
+                            <div class="form-box">
+                                <label for="password-login">Şifreniz * </label>
+                                <input type="text" id="Password" name="Password" placeholder="******">
+                            </div><!-- /.form-box -->
+                            <div class="form-box checkbox">
+                                <input type="checkbox" id="remember" checked name="remember">
+                                <label for="remember">Remember me</label>
+                            </div><!-- /.form-box -->
+                            <div class="form-box">
+                                <button type="submit" class="login">Login</button>
+                                <a href="#" title="">Lost your password?</a>
+                            </div><!-- /.form-box -->
+                        </form><!-- /#form-login -->
+                    </div><!-- /.form-login -->
+                </div><!-- /.col-md-6 -->
+                <div class="col-md-6">
+                    <div class="form-register">
+                        <div class="title">
+                            <h3>Register</h3>
+                        </div>
+                        <form action="KayitOl" method="post" id="form-register" accept-charset="utf-8">
+                            <div class="form-box">
+                                <label for="name-register">Email address * </label>
+                                <input type="text" id="Kullanici_Adi" name="Kullanici_Adi">
+                            </div><!-- /.form-box -->
+                            <div class="form-box">
+                                <label for="password-register">Password</label>
+                                <input type="text" id="Sifre" name="Sifre">
+                            </div><!-- /.form-box -->
+                            <div class="form-box">
+                                <button type="submit" class="register">Register</button>
+                            </div><!-- /.form-box -->
+                        </form><!-- /#form-register -->
+                    </div><!-- /.form-register -->
+                </div><!-- /register -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
+
